@@ -1,0 +1,9 @@
+@import "./_globalVariables.scss";
+
+.app-container {
+	border: $_color-highlight $_border-width--default solid;
+
+	margin: auto auto;
+	width: 90%;
+	height: 80%;
+}

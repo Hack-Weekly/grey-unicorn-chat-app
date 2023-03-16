@@ -1,7 +1,10 @@
+// ----------------------------------------------
+// Box Containing Submission Form To Send Message
+// ----------------------------------------------
+
 const SubmissionBox = () => {
 	return (
-		<div>
-			LISTBOX
+		<div className="submission-box">
 		</div>
 	)
 }
