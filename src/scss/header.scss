@@ -3,7 +3,10 @@
 	width: 100%;
 
 	margin: 5px auto;
-	border: $_color-highlight $_border-width--default solid;
+	// border: $_color-highlight $_border-width--default solid;
+	border-radius: $_border-radius;
+	;
 	width: 90%;
-
+	background-color: $_background-containers;
+	box-shadow: $_box-shadow
 }

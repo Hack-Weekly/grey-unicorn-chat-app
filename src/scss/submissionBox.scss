@@ -1,6 +1,6 @@
 .submission-box {
-	border: 3px $_color-highlight solid;
-
+	// border: 3px $_color-highlight solid;
+	border-radius: $_border-radius;
 	height: 40px;
 	// padding: 15px;
 	margin: 5px auto;
@@ -15,5 +15,6 @@
 	// // suggested width
 	// 	width: 80%;
 	// }
-
+	background-color: white;
+	box-shadow: $_box-shadow
 }

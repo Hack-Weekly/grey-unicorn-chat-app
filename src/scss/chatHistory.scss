@@ -1,8 +1,12 @@
 .chat-history {
 	// Reccomended: Remove border on this item, it'll look cleaner
-	border: $_color-highlight $_border-width--default solid;
+	// border: $_color-highlight $_border-width--default solid;
+	border-radius: $_border-radius;
 
 	margin: 5px auto;
 	width: 98%;
 	height: 91%;
+
+	background-color: white;
+	box-shadow: $_box-shadow
 }
