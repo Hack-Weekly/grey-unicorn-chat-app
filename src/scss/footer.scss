@@ -1,7 +1,12 @@
 .footer {
 
 	margin: 5px auto 0px auto;
-	border: $_color-highlight $_border-width--default solid;
+	// border: $_color-highlight $_border-width--default solid;
+	border-radius: $_border-radius;
+
 	height: 8%;
 	width: 90%;
+
+	background-color: $_background-containers;
+	box-shadow: $_box-shadow
 }
