@@ -7,6 +7,25 @@
 	width: 98%;
 	height: 91%;
 
-	background-color: white;
-	box-shadow: $_box-shadow
+	background-color: $_color-highlight;
+	box-shadow: $_box-shadow;
+	color: black;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: end;
+	
+	scroll-behavior: smooth;
+	overflow-y: scroll;
 }
+
+// .chat-history::-webkit-scrollbar {
+// 	width: 4px;
+// 	position: absolute;
+// 	height:90%;
+//   }
+
+//   .chat-history::-webkit-scrollbar-thumb {
+// 	background-color: rgb(70, 70, 70);
+// 	border-radius: $_border-radius;
+//   }

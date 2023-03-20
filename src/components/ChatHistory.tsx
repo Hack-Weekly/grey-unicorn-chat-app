@@ -7,19 +7,18 @@ import ChatItem from "../types/ChatItem";
 
 import ChatItemBox from "./ChatItemBox";
 
-const ChatHistory = (/*messageHistory: Array<ChatItem>*/) => {
-	// One possible method of rendering
+interface ArrayChatItems {
+	content: Array<ChatItem>
+}
 
-	// let renderedChatItems: any = []
-
-	// messageHistory.forEach((item: ChatItem, i: Number) => {
-	// 	renderedChatItems.push(<ChatItem message="" username="" timestamp={new Date()} /> );
-	// })
-
+const ChatHistory = ({content}: ArrayChatItems) => {
+	
 	return (
 		<div className="chat-history">
 			{
-				//renderedChatItems
+				content?.length > 0 && content.map(item => {
+					return <ChatItemBox username={item.username} message={item.message} timestamp={item.timestamp} />
+				})
 			}
 		</div>
 	)
