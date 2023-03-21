@@ -13,19 +13,19 @@
 
 	display: flex;
 	flex-direction: column;
-	justify-content: end;
+	margin-top: auto;
 	
 	scroll-behavior: smooth;
 	overflow-y: auto;
 }
 
-// .chat-history::-webkit-scrollbar {
-// 	width: 4px;
-// 	position: absolute;
-// 	height:90%;
-//   }
+.chat-history::-webkit-scrollbar {
+	width: 4px;
+	position: absolute;
+	height:90%;
+  }
 
-//   .chat-history::-webkit-scrollbar-thumb {
-// 	background-color: rgb(70, 70, 70);
-// 	border-radius: $_border-radius;
-//   }
+  .chat-history::-webkit-scrollbar-thumb {
+	background-color: rgb(70, 70, 70);
+	border-radius: $_border-radius;
+  }
