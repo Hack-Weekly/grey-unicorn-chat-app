@@ -1,7 +1,7 @@
-$bubbleColor: rgb(108, 155, 241);
+$userColor: rgb(108, 155, 241);
+$friendColor: rgb(167, 166, 166);
 
 .chat-item{
-    background-color: $bubbleColor;
     width: fit-content;
     max-width: 50%;
     height: fit-content;
@@ -20,6 +20,10 @@ $bubbleColor: rgb(108, 155, 241);
 
 span{
     width: fit-content;
+}
+
+.friend {
+    background-color: $friendColor;
 }
 
 .friend .username {
@@ -44,13 +48,13 @@ span{
     left: 0px;
     bottom: 0px;
     width: 10px;
-    border-bottom: 20px solid $bubbleColor;
+    border-bottom: 20px solid $friendColor;
     border-bottom-right-radius: 50px;
 }
 
 .user {
     margin-left: auto;
-    
+    background-color: $userColor;
 }
 
 .user .username {
@@ -71,6 +75,6 @@ span{
     right: 0px;
     bottom:0px;
     width: 10px;
-    border-bottom: 20px solid $bubbleColor;
+    border-bottom: 20px solid $userColor;
     border-bottom-left-radius: 50px;
 }
