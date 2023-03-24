@@ -7,16 +7,21 @@ import React from "react";
 
 import ChatItem from "../types/ChatItem";
 
-interface ChatItemProps {
-	username: String;
-	message: String;
-	timestamp: Date; // optional
-}
+interface ChatItemProps extends ChatItem {}
 
-const ChatItemBox: React.FC<ChatItemProps>= () => {
+const username = "Frank"
+
+const ChatItemBox: React.FC<ChatItemProps>= (content: ChatItemProps) => {
+
+	let classNames:Array<String> = ['chat-item']
+
+	content.username === username ? classNames.push('user') : classNames.push('friend')
+
 	return (
-		<div className="chat-item">
-
+		<div key={content.timestamp.toString()} className={classNames.join(' ')}>
+			<span className="username">{content.username}</span>
+			<span className="message">{content.message}</span>
+			<span className="timestamp">{content.timestamp.toLocaleTimeString()}</span>
 		</div>
 	)
 }

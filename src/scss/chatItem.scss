@@ -1,0 +1,80 @@
+$userColor: rgb(108, 155, 241);
+$friendColor: rgb(167, 166, 166);
+
+.chat-item{
+    width: fit-content;
+    max-width: 50%;
+    height: fit-content;
+    margin: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 1rem;
+
+    position: relative;
+    
+    flex-direction: column;
+    justify-content: left;
+}
+
+span{
+    width: fit-content;
+}
+
+.friend {
+    background-color: $friendColor;
+}
+
+.friend .username {
+    position: absolute;
+    top: -17px;
+    left: 5px;
+    font-size: .8rem;
+    color: rgb(107, 107, 107);
+}
+
+.friend .timestamp {
+    position: absolute;
+    right: -65px;
+    bottom: 0px;
+    font-size: .7rem;
+    color:rgb(107, 107, 107);
+}
+
+.friend:before {
+    content: "";
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 10px;
+    border-bottom: 20px solid $friendColor;
+    border-bottom-right-radius: 50px;
+}
+
+.user {
+    margin-left: auto;
+    background-color: $userColor;
+}
+
+.user .username {
+    display: none;
+}
+
+.user .timestamp {
+    position: absolute;
+    left: -65px;
+    bottom: 0px;
+    font-size: .7rem;
+    color:rgb(107, 107, 107);
+}
+
+.user:before {
+    content: "";
+    position: absolute;
+    right: 0px;
+    bottom:0px;
+    width: 10px;
+    border-bottom: 20px solid $userColor;
+    border-bottom-left-radius: 50px;
+}
