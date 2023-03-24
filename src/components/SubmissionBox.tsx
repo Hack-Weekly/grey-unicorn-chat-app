@@ -3,8 +3,14 @@
 // ----------------------------------------------
 
 const SubmissionBox = () => {
+
+	const onSubmit = () => {
+
+	}
+
 	return (
 		<div className="submission-box">
+			
 		</div>
 	)
 }
