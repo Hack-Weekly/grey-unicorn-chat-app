@@ -8,15 +8,17 @@ import React from "react";
 import ChatItem from "../types/ChatItem";
 
 interface ChatItemProps {
-	username: String;
+	name: String;
 	message: String;
-	timestamp: Date; // optional
+	timestamp: number; // optional
 }
 
-const ChatItemBox: React.FC<ChatItemProps>= () => {
+const ChatItemBox: React.FC<ChatItemProps>= ({name, message, timestamp}) => {
 	return (
 		<div className="chat-item">
-
+			<p>{name}</p>
+			<p>{message}</p>
+			<p>{timestamp}</p>
 		</div>
 	)
 }
