@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database";
+
 import { getAuth } from "firebase/auth";
 
 
@@ -14,22 +15,21 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
 
-  apiKey: process.env.FIREBASE_API_KEY,
+  apiKey: "AIzaSyDfQOwlKE9nC7r-pQBZcS8MPpINNqql-QQ",
 
   authDomain: "grey-unicorn-chat-app.firebaseapp.com",
 
-  databaseURL: process.env.DATABASE_URL,
+  databaseURL: "https://grey-unicorn-chat-app-default-rtdb.firebaseio.com",
 
-  projectId: process.env.PROJECT_ID,
+  projectId: "grey-unicorn-chat-app",
 
-  storageBucket: process.env.STORAGE_BUCKET,
+  storageBucket: "grey-unicorn-chat-app.appspot.com",
 
   messagingSenderId: "419503031315",
 
-  appId: process.env.APP_ID,
+  appId: "1:419503031315:web:0a92881a05fccd97c2ebe6",
 
   measurementId: "G-07J1EWFJW8"
-
 };
 
 
@@ -38,10 +38,6 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 // Initialize Firebase Authentication and get a reference to the service
-const auth = getAuth(app);
+export const auth = getAuth(app);
 
-// Initialize Cloud Firestore and get a reference to the service
-const db = getDatabase(app);
-
-
-
+export const db = getDatabase();

@@ -1,29 +1,50 @@
 // -----------------------------------------------
 //  Box containing all previous messages to the chat
 // -----------------------------------------------
-
-// Chat Item Type. Check /types/ChatItem for details
+import { useState, useEffect } from "react";
+import { ref, onValue, orderByChild, limitToLast } from "firebase/database";
+import { db } from "../firebase/config";
 import ChatItem from "../types/ChatItem";
-
 import ChatItemBox from "./ChatItemBox";
 
-const ChatHistory = (/*messageHistory: Array<ChatItem>*/) => {
-	// One possible method of rendering
+interface ChatMessage {
+	id: string;
+	name: string;
+	messages: string;
+	timestamp: number;
+}
 
-	// let renderedChatItems: any = []
+const ChatHistory = () => {
+	const [chatMessages, setChatMessages] = useState<ChatMessage[]>([]);
 
-	// messageHistory.forEach((item: ChatItem, i: Number) => {
-	// 	renderedChatItems.push(<ChatItem message="" username="" timestamp={new Date()} /> );
-	// })
+	useEffect(() => {
+		const msgRef = ref(db, "messages");
+		//const sortedMsgRef = orderByChild(msgRef, "timestamp");  
+		//const latestMsgRef = limitToLast(msgRef, 100); // limit and load the most recent 100 messages
+
+		onValue(msgRef, (snapshot) => {
+			const chatMessages: ChatMessage[] = [];
+			snapshot.forEach((childSnapshot) => {
+				const message: ChatMessage = {
+					id: childSnapshot.key as string,
+					name: childSnapshot.child("name").val() as string,
+					messages: childSnapshot.child("messages").val() as string,
+					timestamp: childSnapshot.child("timestamp").val() as number,
+					
+				};
+				chatMessages.push(message);
+			});
+			setChatMessages(chatMessages.reverse());
+		})
+	}, [])
 
 	return (
 		<div className="chat-history">
-			{
-				//renderedChatItems
-			}
+			{chatMessages.map((chatMessage) => (
+				<ChatItemBox key={chatMessage.id} name={chatMessage.name} message={chatMessage.messages}  timestamp={new Date(chatMessage.timestamp).toLocaleString()} />
+			))}
 		</div>
 	)
-	
 }
 
-export default ChatHistory
+export default ChatHistory;

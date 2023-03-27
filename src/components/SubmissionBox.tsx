@@ -1,18 +1,34 @@
 // ----------------------------------------------
 // Box Containing Submission Form To Send Message
 // ----------------------------------------------
+import { useRef } from "react";
+import { useFirebaseContext } from "../context/FirebaseContext"
 
-const SubmissionBox = () => {
+const SubmissionBox: React.FC = () => {
 
-	const onSubmit = () => {
+  const {sendMsg} = useFirebaseContext();
 
-	}
+  const messageInputRef = useRef<HTMLInputElement>(null);
 
-	return (
-		<div className="submission-box">
-			
-		</div>
-	)
-}
+  const onSubmit = () => {
+    if (messageInputRef.current) {
+      const message = messageInputRef.current.value;
+      sendMsg(message);
+      messageInputRef.current.value = "";
+    }
+  };
+
+  return (
+    <div className="submission-box">
+      <input
+        id="message"
+        type="text"
+        name="Enter your message..."
+        ref={messageInputRef}
+      />
+      <input type="submit" value="Send" onClick={onSubmit} />
+    </div>
+  );
+};
 
 export default SubmissionBox;
