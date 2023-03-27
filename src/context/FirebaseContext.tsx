@@ -77,7 +77,7 @@ export const FirebaseProvider: FC<Props> = ({ children}) => {
   }
 
   //Send a message
-  const sendMsg = async (msg) => {
+  const sendMsg = async (msg: any) => {
       set(messageDataRef, {
         messages: msg,
         name: currentUser?.displayName,
