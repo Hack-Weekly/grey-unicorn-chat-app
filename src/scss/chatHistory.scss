@@ -7,9 +7,8 @@
 	width: 98%;
 	height: 91%;
 
-	background-color: $_color-highlight;
 	box-shadow: $_box-shadow;
-	color: black;
+	color: #0A0A0A;
 
 	display: flex;
 	flex-direction: column;
@@ -17,6 +16,10 @@
 	
 	scroll-behavior: smooth;
 	overflow-y: auto;
+}
+
+.chat-item-box:first-child {
+	margin-top: auto;
 }
 
 .chat-history::-webkit-scrollbar {

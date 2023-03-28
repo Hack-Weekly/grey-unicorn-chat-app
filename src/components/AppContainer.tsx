@@ -2,12 +2,26 @@
 // Container for the entire application
 // ------------------------------------
 
-import ChatItem from "../types/ChatItem"
+import ChatItemType from "../types/ChatItem"
 import ChatHistory from "./ChatHistory"
 import SubmissionBox from "./SubmissionBox"
 
 const AppContainer = () => {
-	let chatHistoryArr: Array<ChatItem> = [{username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()},{username: 'Bob', message:"Blah blah", timestamp: new Date()}, {username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()},{username: 'Bob', message:"Blah blah", timestamp: new Date()}, {username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()}, {username: 'Bob', message:"Blah blah", timestamp: new Date()},{username: 'Frank', message:"Blah", timestamp: new Date()},{username: 'Bob', message:"Blah blah", timestamp: new Date()}, ]
+	let chatHistoryArr: Array<Array<ChatItemType>> = 
+	[
+		[
+			
+			{username: 'Frank', message:"Hey", timestamp: new Date()},
+			{username: 'Frank', message:"Whats up", timestamp: new Date()}], 
+		[	
+			{username: 'Bob', message:"Good afternoon!", timestamp: new Date()}, 
+			{username: 'Bob', message:"Nothing new. Hows work?", timestamp: new Date()}
+		],
+		[	
+			{username: 'Timmy', message:"Hey Guys!", timestamp: new Date()}
+		],
+		
+	]
 	return (
 		<div className="app-container">
 			<ChatHistory content={chatHistoryArr} />
