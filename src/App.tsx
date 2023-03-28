@@ -13,7 +13,7 @@ function App() {
   <FirebaseProvider>
     {/* <Login /> */}
     <div className="App">
-      {/* <Login /> */}
+      <Login />
 			<Header />
 			<AppContainer />
 			<Footer />

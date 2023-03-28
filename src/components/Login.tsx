@@ -1,7 +1,4 @@
 const Login = () => {
-    //put functions here 
-
-
 
 
     return ( 
@@ -14,7 +11,7 @@ const Login = () => {
               />
             </div>
             <div className="form-container">
-                <form action="">
+                <form className="login-form" action="">
                     <label className="email" htmlFor="email">Email</label>
                     <input 
                       name="email" 
@@ -33,15 +30,16 @@ const Login = () => {
                       title="checkbox"
                     />
                     <label className="checkbox" htmlFor="checkbox">Remember me</label>
-                    <div className="submit">
+                    <div className="submit--login">
                       <input 
                         type="submit" 
                         value="Sign in"
                       />
                       <a 
                       type="url"
-                      title="" 
-                       >Don't have an account?</a>
+                      title=""
+                      className="no-account-link" 
+                      >Don't have an account?</a>
                     </div>
         
                     <div className='g-sign-in-button'>
@@ -51,17 +49,17 @@ const Login = () => {
                           src="./src/assets/g-logo.svg"
                           alt="google logo"
                           />
-                         </div>
-                         <span className='text-container'>
+                        </div>
+                        <span className='text-container'>
                           <span>Sign in with Google</span>
-                         </span>
+                        </span>
                       </div>
                     </div>
                     
                 </form>
             </div>
         </div>
-     );
+    );
 }
- 
+
 export default Login;
