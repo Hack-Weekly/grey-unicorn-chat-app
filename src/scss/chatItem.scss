@@ -1,11 +1,13 @@
 $bubbleColor: #E2E2E2;
 
 .chat-item{
+
+    font-size: 20px;
     width: fit-content;
     max-width: 50%;
     height: fit-content;
     margin: 10px;
-    padding: 10px 24px;
+    padding: 24px;
     border-radius: 2rem;
 
     position: relative;
@@ -38,6 +40,11 @@ $bubbleColor: #E2E2E2;
     background-color: #A8D5FF;
     margin: 0 10px ;
     object-fit: cover;
+    display: flex;
+}
+
+.user-picture > span {
+    margin: 0 3px;
 }
 
 span{
@@ -47,6 +54,10 @@ span{
 .user > div {
     margin-left: auto;
     border-radius: 2rem 0 2rem 2rem;
+}
+
+.user > .user-picture {
+   flex-direction: row-reverse;
 }
 
 .friend > div {

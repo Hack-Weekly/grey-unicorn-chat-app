@@ -12,6 +12,7 @@ const ChatItemBox: React.FC<{items: Array<ChatItemType>}> = ( {items} ) => {
     <div className={classNames.join(" ")}>
       <div className="user-picture">
         <img src="/user.png" />
+        <span>{items[0].username}</span>
       </div>
       {items.map(content => {
         return <ChatItem username={content.username} message={content.message} timestamp={content.timestamp} />
