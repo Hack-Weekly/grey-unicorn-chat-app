@@ -1,5 +1,8 @@
-const Login = () => {
+import { Link } from "react-router-dom";
+import { useFirebaseContext } from "../context/FirebaseContext"
 
+const Login = () => {
+  const {signInWithGoogle,logOut, currentUser} = useFirebaseContext();
 
     return ( 
         <div className="login">
@@ -31,15 +34,16 @@ const Login = () => {
                     />
                     <label className="checkbox" htmlFor="checkbox">Remember me</label>
                     <div className="submit--login">
-                      <input 
-                        type="submit" 
-                        value="Sign in"
-                      />
-                      <a 
-                      type="url"
-                      title=""
-                      className="no-account-link" 
-                      >Don't have an account?</a>
+                      <Link
+                        className="submit--btn" 
+                        to="/chat" 
+                        type="submit" > Sign in
+                      </Link>
+                      <Link
+                        className="no-account-link" 
+                        to="/chat" 
+                        >Don't have an account?
+                      </Link>
                     </div>
         
                     <div className='g-sign-in-button'>
@@ -51,7 +55,11 @@ const Login = () => {
                           />
                         </div>
                         <span className='text-container'>
-                          <span>Sign in with Google</span>
+                          <span onClick={signInWithGoogle}>
+                            <Link
+                              to="/chat"
+                              className="g-btn-link"
+                              >Sign in with Google</Link></span>
                         </span>
                       </div>
                     </div>

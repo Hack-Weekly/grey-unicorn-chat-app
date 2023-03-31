@@ -4,8 +4,8 @@
 import { useState, useEffect } from "react";
 import { ref, onValue, orderByChild, limitToLast } from "firebase/database";
 import { db } from "../firebase/config";
-import ChatItem from "../types/ChatItem";
 import ChatItemBox from "./ChatItemBox";
+import Header from "./Header";
 
 interface ChatMessage {
 	id: string;
@@ -40,6 +40,7 @@ const ChatHistory = () => {
 
 	return (
 		<div className="chat-history">
+			<Header />
 			{chatMessages.map((chatMessage) => (
 				<ChatItemBox key={chatMessage.id} name={chatMessage.name} message={chatMessage.messages}  timestamp={new Date(chatMessage.timestamp).toLocaleString()} />
 			))}
