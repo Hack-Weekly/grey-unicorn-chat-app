@@ -1,20 +1,22 @@
-// import { useState } from 'react'
 import './App.scss'
 import AppContainer from './components/AppContainer'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import Login from './components/Login'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { FirebaseProvider } from './context/FirebaseContext'
 
 
 function App() {
-  // const [count, setCount] = useState(0)
+
   return (
   <FirebaseProvider>
+    <Router>
     <div className="App">
-			<Header />
-			<AppContainer />
-			<Footer />
+      <Routes>
+        <Route path='/' element={ <Login />} />
+        <Route path='/chat' element={ <AppContainer />} />
+      </Routes>
 		</div>
+    </Router>
   </FirebaseProvider>
   )
 }
