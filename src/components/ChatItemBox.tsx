@@ -16,8 +16,8 @@ interface ChatItemProps {
 const ChatItemBox: React.FC<ChatItemProps>= ({name, message, timestamp}) => {
 	return (
 		<div className="chat-item">
-			<p>{name}</p>
-			<p>{message}</p>
+			<p className="name">{name} <img className="user" src="/src/assets/user.png" alt="user icon" /></p>
+			<p className="message">{message}</p>
 			<p>{timestamp}</p>
 		</div>
 	)

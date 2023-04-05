@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
+
+
 .chat-history {
 	// Reccomended: Remove border on this item, it'll look cleaner
 	// border: $_color-highlight $_border-width--default solid;
 	border-radius: $_border-radius;
-
+	font-family: 'Inter', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
 	margin: 5px auto;
 	width: 98%;
 	height: 91%;
@@ -18,4 +22,31 @@
 	}
 	scroll-behavior: smooth;
 	overflow-y: auto;
+}
+
+.user {
+	border: 1px solid red;
+	background-color: #A8D5FF;
+	width: 8px;
+}
+
+.name {
+	font-size: small;
+	font-weight: 500;
+}
+
+.message {
+	background: #e2e2e2;
+	width: fit-content;
+    // max-width: 50%;
+    // height: 1px;
+    margin: 10px;
+    padding: 24px;
+    // border-radius: 2rem;
+		border-radius: 1rem 0 1rem 1em;
+
+    position: relative;
+    
+    flex-direction: column;
+
 }

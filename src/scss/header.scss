@@ -1,12 +1,41 @@
-.header {
-	height: 8%;
-	width: 100%;
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Source+Sans+Pro:wght@200;300;400;600;700&display=swap');
 
-	margin: 5px auto;
-	// border: $_color-highlight $_border-width--default solid;
-	border-radius: $_border-radius;
-	;
-	width: 90%;
-	background-color: $_background-containers;
-	box-shadow: $_box-shadow;
+
+.header {
+	display: block;
+	font-family: 'Inter', sans-serif;
+  font-family: 'Source Sans Pro', sans-serif;
+	font-size: smaller;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.header--login {
+	display: inline-block;
+	width: 16em;
+	background-color: #E8FFEA;
+	margin-top: 3em;
+	font-weight: 400;
+	border-radius: 6px;
+	color: #888888;
+}
+
+.logout--btn {
+	background: #F4B4B4;
+	border: 1px solid #F4B4B4;
+	border-radius: 4px;
+	color: #fcfdfc;
+	margin-top: 1.3em;
+	float: left;
+	margin-left: -26em;
+	width: 1.5em;
+	height: 1.5em;
+}
+
+.x  {
+	width: 10px;
+	height: 10px;
+	margin-left: -.2em;
+	margin-top: .25em;
+	
 }
